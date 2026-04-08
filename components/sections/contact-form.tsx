@@ -56,7 +56,7 @@ export default function ContactForm() {
           business_type: formData.businessType,
           message: formData.message,
         },
-        'xTUr3yxfKHBqWNCN3'
+        'xTUr3yxfKHBqWNCN3' // Public Key
       );
 
       setSubmitted(true);

@@ -14,13 +14,13 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="/logos/studio.png"
+                  src="/logos/logo.png"
                   alt="Abhay Web Studio"
                   fill
                   className="object-contain dark:hidden"
                 />
                 <Image
-                  src="/logos/studio.png"
+                  src="/logos/logo.png"
                   alt="Abhay Web Studio"
                   fill
                   className="object-contain hidden dark:block"

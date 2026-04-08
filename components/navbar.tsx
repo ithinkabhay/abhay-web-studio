@@ -17,13 +17,13 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <div className="relative w-30 h-30 md:w-30 md:h-30">
               <Image
-                src="/logos/studio.png"
+                src="/logos/logo.png"
                 alt="Abhay Studio"
                 fill
                 className="object-contain dark:hidden"
               />
               <Image
-                src="/logos/studio.png"
+                src="/logos/logo.png"
                 alt="Abhay Studio"
                 fill
                 className="object-contain hidden dark:block"
