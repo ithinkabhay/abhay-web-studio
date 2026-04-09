@@ -206,7 +206,7 @@ export default function ContactPage() {
             <Button className="bg-[#22c55e] hover:bg-[#16a34a] text-black font-bold px-10 py-6 text-lg rounded-lg shadow-2xl hover:shadow-3xl transition-all">
               Get Started Now
             </Button>
-            <a href="https://wa.me/1234567890?text=Hi%20Abhay%20Studio%2C%20I%20need%20help%20building%20my%20website" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/+919770670564?text=Hi%20Abhay%20Studio%2C%20I%20need%20help%20building%20my%20website" target="_blank" rel="noopener noreferrer">
               <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-black px-10 py-6 text-lg rounded-lg font-bold w-full sm:w-auto">
                 <MessageCircle className="w-5 h-5 mr-2" />
                 Chat on WhatsApp
