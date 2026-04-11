@@ -1,92 +1,108 @@
-'use client';
+"use client"
 
-import { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const navLinks = [
+    { href: "#services", label: "Services" },
+    { href: "#portfolio", label: "Portfolio" },
+    { href: "#reviews", label: "Reviews" },
+    // { href: "#pricing", label: "Pricing" },
+    { href: "#contact", label: "Contact" },
+  ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/80 dark:bg-[#0B0F19]/80 backdrop-blur-lg border-b border-gray-200/50 dark:border-gray-800/50 shadow-sm">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-background shadow-md border-b border-border"
+        : "bg-background-blur border-b border-blue"
+        }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-30 h-30 md:w-30 md:h-30">
-              <Image
-                src="/logos/logo.png"
-                alt="Abhay Studio"
-                fill
-                className="object-contain dark:hidden"
-              />
-              <Image
-                src="/logos/logo.png"
-                alt="Abhay Studio"
-                fill
-                className="object-contain hidden dark:block"
+            <div className="flex items-center justify-center">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="h-12 w-auto object-contain"
               />
             </div>
-            <span className="text-lg font-bold text-black dark:text-white hidden sm:inline">
+            <span className="text-2xl font-bold text-primary ">
               Abhay Web Studio
             </span>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="#services" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white text-sm font-medium">
-              Services
-            </Link>
-            <Link href="#portfolio" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white text-sm font-medium">
-              Portfolio
-            </Link>
-            {/* <Link href="#pricing" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white text-sm font-medium">
-              Pricing
-            </Link> */}
-            <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white text-sm font-medium">
-              Contact
-            </Link>
-            <Link href="/contact">
-              <Button className="bg-[#22c55e] hover:bg-[#16a34a] text-black font-semibold px-6 py-2 shadow-lg hover:shadow-xl transition-all">
-                Get Started
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="hidden lg:flex items-center gap-4">
+            {/* <Button variant="ghost" size="sm" className="text-muted-foreground">
+              See Demo
+            </Button> */}
+            <Link href="#contact">
+              <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Get My Website
               </Button>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-black dark:text-white"
-            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden pb-4 border-t border-gray-200 dark:border-gray-800 pt-4">
-            <Link href="#services" className="block py-2 text-gray-700 dark:text-gray-300 text-sm font-medium">
-              Services
-            </Link>
-            <Link href="#portfolio" className="block py-2 text-gray-700 dark:text-gray-300 text-sm font-medium">
-              Portfolio
-            </Link>
-            <Link href="#pricing" className="block py-2 text-gray-700 dark:text-gray-300 text-sm font-medium">
-              Pricing
-            </Link>
-            <Link href="/contact" className="block py-2 text-gray-700 dark:text-gray-300 text-sm font-medium">
-              Contact
-            </Link>
-            <Link href="/contact" className="block">
-              <Button className="w-full mt-4 bg-[#22c55e] hover:bg-[#16a34a] text-black font-medium">
-                Get Started
-              </Button>
-            </Link>
-          </div>
-        )}
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border">
+          <div className="px-4 py-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-muted-foreground hover:text-foreground transition-colors text-sm font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="flex flex-col gap-2 pt-4">
+              {/* <Button variant="outline" size="sm" className="w-full">
+                See Demo
+              </Button> */}
+              <Button size="sm" className="w-full bg-primary text-primary-foreground">
+                Get My Website
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
-  );
+  )
 }

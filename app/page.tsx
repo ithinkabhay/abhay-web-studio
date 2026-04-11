@@ -1,36 +1,32 @@
-'use client';
-
-import { useState } from 'react';
-import Navbar from '@/components/navbar';
-import Hero from '@/components/sections/hero';
-import TrustSection from '@/components/sections/trust-section';
-import Reviews from '@/components/sections/reviews';
-import Services from '@/components/sections/services';
-import Portfolio from '@/components/sections/portfolio';
-import BeforeAfter from '@/components/sections/before-after';
-import WhyChooseUs from '@/components/sections/why-choose-us';
-import Process from '@/components/sections/process';
-// import Pricing from '@/components/sections/pricing';
-import CTA from '@/components/sections/cta';
-import Footer from '@/components/footer';
-import WhatsAppButton from '@/components/whatsapp-button';
+import { Navbar } from "@/components/navbar"
+import { HeroSection } from "@/components/hero-section"
+import { TrustSection } from "@/components/trust-section"
+import { ReviewsSection } from "@/components/reviews-section"
+import { ServicesSection } from "@/components/services-section"
+import { PortfolioSection } from "@/components/portfolio-section"
+import { WhyChooseSection } from "@/components/why-choose-section"
+import { ProcessSection } from "@/components/process-section"
+// import { PricingSection } from "@/components/pricing-section"
+import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-[#0B0F19]">
+    <main className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
+      <HeroSection />
       <TrustSection />
-      <Reviews />
-      <Services />
-      <Portfolio />
-      <BeforeAfter />
-      <WhyChooseUs />
-      <Process />
-      {/* <Pricing /> */}
-      <CTA />
+      <ServicesSection />
+      <PortfolioSection />
+      <ReviewsSection />
+      <WhyChooseSection />
+      <ProcessSection />
+      {/* <PricingSection /> */}
+      <ContactSection />
       <Footer />
-      <WhatsAppButton />
     </main>
-  );
+  )
+}
+export const metadata = {
+  title: "Abhay Web Studio | Grow Your Business Online",
 }
