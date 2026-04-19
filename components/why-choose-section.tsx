@@ -1,75 +1,112 @@
 "use client"
 
-import { Users, TrendingUp, Award, Zap, CheckCircle2 } from "lucide-react"
+import { Users, TrendingUp, Award, Zap, CheckCircle2, Sparkles } from "lucide-react"
+import { motion } from "framer-motion"
+import { SectionCard } from "@/components/section-card"
 
 const reasons = [
   {
     icon: TrendingUp,
     title: "Get More Customers",
-    description: "Our websites are designed with one goal: converting visitors into paying customers.",
+    description: "Conversion-first design that turns curious visitors into paying customers — every single day.",
   },
   {
     icon: Users,
-    title: "Increase Bookings",
-    description: "Integrated booking systems that work 24/7, automatically filling your calendar.",
+    title: "Increase Bookings 24/7",
+    description: "Smart booking systems that fill your calendar even while you sleep. No more chasing.",
   },
   {
     icon: Award,
-    title: "Premium Design That Builds Trust",
-    description: "Professional designs that make your business look established and trustworthy.",
+    title: "Premium Brand Look",
+    description: "Polished, magazine-quality design that makes your business look 10× more established.",
   },
   {
     icon: Zap,
-    title: "Fast Delivery",
-    description: "Get your website live in weeks, not months. We respect your time and urgency.",
+    title: "Lightning Fast Delivery",
+    description: "Live in 7 days, not 7 months. We respect your time, your money, and your momentum.",
   },
+]
+
+const checks = [
+  "Conversion-focused design",
+  "Mobile-first approach",
+  "SEO best practices baked in",
+  "Lightning-fast performance",
+  "30 days of free support",
+  "Unlimited revisions",
 ]
 
 export function WhyChooseSection() {
   return (
-    <section className="py-24 bg-secondary/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <CheckCircle2 className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary font-medium">Why Choose Us</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-              Built for Results, Not Just Looks
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We don&apos;t just make pretty websites. We build strategic digital assets that work hard for your business every single day.
-            </p>
-
-            <div className="space-y-4">
-              {["Conversion-focused design", "Mobile-first approach", "SEO best practices", "Ongoing support included"].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
-                    <CheckCircle2 className="w-3 h-3 text-primary" />
-                  </div>
-                  <span className="text-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
+    <SectionCard>
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-6">
+            <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
+            <span className="text-xs sm:text-sm text-foreground/90 font-medium">Why choose us</span>
           </div>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-5 text-balance tracking-tight">
+            Built for <span className="text-gradient">results</span>, not just looks.
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
+            Pretty websites are easy. Profitable websites are an art. We build the second kind — every time.
+          </p>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            {reasons.map((reason, index) => (
-              <div
-                key={index}
-                className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-all"
+          <div className="grid sm:grid-cols-2 gap-3">
+            {checks.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.06, duration: 0.4 }}
+                className="flex items-center gap-3 p-2.5 rounded-lg hover:bg-secondary/40 transition-colors"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <reason.icon className="w-6 h-6 text-primary" />
+                <div className="w-6 h-6 rounded-full bg-primary/15 ring-1 ring-primary/30 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{reason.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{reason.description}</p>
-              </div>
+                <span className="text-sm text-foreground/90">{item}</span>
+              </motion.div>
             ))}
           </div>
+
+          <div className="mt-8 inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <Sparkles className="w-4 h-4 text-primary" />
+            And so much more — let&apos;s build something amazing together.
+          </div>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-4 lg:gap-5">
+          {reasons.map((reason, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className={`gradient-border bg-card border border-border rounded-2xl p-6 hover:border-primary/40 transition-all hover:-translate-y-1 group ${
+                index % 2 === 1 ? "sm:translate-y-8" : ""
+              }`}
+            >
+              <div className="relative mb-5">
+                <div className="absolute inset-0 bg-primary/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-xl" />
+                <div className="relative w-12 h-12 bg-primary/10 ring-1 ring-primary/30 rounded-xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                  <reason.icon className="w-6 h-6 text-primary" />
+                </div>
+              </div>
+              <h3 className="text-lg font-display font-bold text-foreground mb-2 tracking-tight">
+                {reason.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{reason.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </section>
+    </SectionCard>
   )
 }
