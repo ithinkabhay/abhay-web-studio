@@ -79,7 +79,8 @@ export const metadata: Metadata = {
   creator: 'Abhay Raj Singh',
   publisher: 'Abhay Web Studio',
   category: 'Web Design & Development',
-  alternates: { canonical: SITE_URL },
+  // NOTE: No global canonical here on purpose — each page declares its own.
+  // A global canonical would incorrectly point every page to the homepage.
   robots: {
     index: true,
     follow: true,
@@ -95,7 +96,8 @@ export const metadata: Metadata = {
     title: 'Abhay Web Studio — Premium Websites That Convert in 7 Days',
     description:
       'High-converting websites for businesses. Delivered in 7 days. Trusted by 100+ clients across 15+ countries.',
-    url: SITE_URL,
+    // url is provided per-page; defaulting to site root here
+    url: '/',
     siteName: 'Abhay Web Studio',
     locale: 'en_US',
     type: 'website',

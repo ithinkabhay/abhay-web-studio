@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
 import { TrustSection } from "@/components/trust-section"
@@ -11,6 +12,11 @@ import { ProcessSection } from "@/components/process-section"
 import { PricingSection } from "@/components/pricing-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
+}
 
 export default function Home() {
   return (

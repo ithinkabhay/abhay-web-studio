@@ -1,3 +1,26 @@
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "FAQ, Privacy & Support",
+  description:
+    "Frequently asked questions, privacy policy, terms of service, and support for Abhay Web Studio.",
+  alternates: { canonical: "/info" },
+  openGraph: { url: "/info", title: "FAQ, Privacy & Support · Abhay Web Studio" },
+  // Indexable so legal/privacy pages can be found, but tell Google not to
+  // use meta/description snippets aggressively (thin utility content).
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": 120,
+      "max-image-preview": "standard",
+    },
+  },
+}
+
 export default function InfoPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-20 space-y-16">
