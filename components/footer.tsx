@@ -29,7 +29,7 @@ const socialLinks = [
   { icon: Twitter, href: "https://x.com/ithinkabhay", label: "Twitter" },
   { icon: Instagram, href: "https://www.instagram.com/ithinkabhay", label: "Instagram" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/abhaysinghp01", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:hello@abhaywebstudio.in", label: "Email" },
+  { icon: Mail, href: "mailto:singh.abhayparaste@gmail.com", label: "Email" },
 ]
 
 export function Footer() {

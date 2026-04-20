@@ -53,7 +53,7 @@ const secondary = [
     id: "email",
     label: "Email",
     icon: Mail,
-    href: "mailto:hello@abhaywebstudio.in",
+    href: "mailto:singh.abhayparaste@gmail.com",
     color: "text-purple-400",
     bg: "bg-purple-500/10 ring-purple-500/30",
   },

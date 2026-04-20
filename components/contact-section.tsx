@@ -99,7 +99,7 @@ export function ContactSection() {
             </a>
 
             <a
-              href="mailto:hello@abhaywebstudio.in"
+              href="mailto:singh.abhayparaste@gmail.com"
               className="gradient-border flex items-center gap-4 bg-card border border-border rounded-2xl p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
             >
               <div className="w-12 h-12 bg-cyan-500/15 ring-1 ring-cyan-500/30 rounded-xl flex items-center justify-center">
@@ -107,7 +107,7 @@ export function ContactSection() {
               </div>
               <div className="flex-1">
                 <div className="font-semibold text-foreground">Email</div>
-                <div className="text-sm text-muted-foreground">hello@abhaywebstudio.in</div>
+                <div className="text-sm text-muted-foreground">singh.abhayparaste@gmail.com</div>
               </div>
               <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
             </a>
