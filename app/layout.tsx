@@ -110,8 +110,8 @@ export const metadata: Metadata = {
     creator: '@ithinkabhay',
   },
   icons: {
-    icon: '/icon.svg',
-    apple: '/apple-icon.png',
+    icon: '/favicon-32x32.png',
+    apple: '/apple-touch-icon.png',
   },
 }
 

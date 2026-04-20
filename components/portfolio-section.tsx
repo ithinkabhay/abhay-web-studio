@@ -217,7 +217,7 @@ const projects = [
     category: "Online Educator",
     description: "Course launch hit ₹4.5L in revenue in week one.",
     image:
-      "https://images.unsplash.com/photo-1610484826917-0f101a7c1d3a?w=900&h=620&fit=crop",
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=620&fit=crop",
     metric: "₹4.5L",
     metricLabel: "Week 1",
   },

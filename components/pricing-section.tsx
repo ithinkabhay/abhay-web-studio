@@ -266,7 +266,7 @@ export function PricingSection() {
       </AnimatePresence>
 
       <div className="grid lg:grid-cols-3 gap-5 lg:gap-6 lg:items-stretch">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="sync">
           {plans.map((plan, index) => (
             <motion.div
               key={planType + plan.name}
