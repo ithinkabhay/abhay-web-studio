@@ -48,13 +48,14 @@ export function ContactSection() {
   }
 
   return (
-    <SectionCard id="contact">
-      <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+    <SectionCard id="contact" innerClassName="min-w-0">
+      <div className="grid min-w-0 w-full lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
+          className="min-w-0 max-w-full"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass mb-6">
             <MessageCircle className="w-3.5 h-3.5 text-primary" />
@@ -63,62 +64,64 @@ export function ContactSection() {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground mb-5 text-balance tracking-tight">
             Ready to grow? <span className="text-gradient">Let&apos;s build it.</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed text-pretty break-words">
             Free 30-min strategy call. Zero obligation. We respond within 24 hours — usually within 2.
           </p>
 
-          <div className="space-y-3 mb-8">
+          <div className="space-y-3 mb-8 min-w-0">
             <a
               href="https://wa.me/+919770670564"
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-border flex items-center gap-4 bg-card border border-border rounded-2xl p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
+              className="gradient-border flex min-w-0 w-full items-center gap-3 sm:gap-4 bg-card border border-border rounded-2xl p-3.5 sm:p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
             >
-              <div className="w-12 h-12 bg-emerald-500/15 ring-1 ring-emerald-500/30 rounded-xl flex items-center justify-center">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 shrink-0 bg-emerald-500/15 ring-1 ring-emerald-500/30 rounded-xl flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-emerald-400" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="font-semibold text-foreground">WhatsApp</div>
                 <div className="text-sm text-muted-foreground">Chat with us instantly</div>
               </div>
-              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
             </a>
 
             <a
               href="tel:+919770670564"
-              className="gradient-border flex items-center gap-4 bg-card border border-border rounded-2xl p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
+              className="gradient-border flex min-w-0 w-full items-center gap-3 sm:gap-4 bg-card border border-border rounded-2xl p-3.5 sm:p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
             >
-              <div className="w-12 h-12 bg-primary/15 ring-1 ring-primary/30 rounded-xl flex items-center justify-center">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 shrink-0 bg-primary/15 ring-1 ring-primary/30 rounded-xl flex items-center justify-center">
                 <Calendar className="w-6 h-6 text-primary" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="font-semibold text-foreground">Free Consultation</div>
                 <div className="text-sm text-muted-foreground">Schedule a 30-min strategy call</div>
               </div>
-              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
             </a>
 
             <a
               href="mailto:singh.abhayparaste@gmail.com"
-              className="gradient-border flex items-center gap-4 bg-card border border-border rounded-2xl p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
+              className="gradient-border flex min-w-0 w-full items-center gap-3 sm:gap-4 bg-card border border-border rounded-2xl p-3.5 sm:p-4 hover:border-primary/40 transition-all hover:-translate-y-0.5 group"
             >
-              <div className="w-12 h-12 bg-cyan-500/15 ring-1 ring-cyan-500/30 rounded-xl flex items-center justify-center">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 shrink-0 bg-cyan-500/15 ring-1 ring-cyan-500/30 rounded-xl flex items-center justify-center">
                 <Mail className="w-6 h-6 text-cyan-400" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="font-semibold text-foreground">Email</div>
-                <div className="text-sm text-muted-foreground">singh.abhayparaste@gmail.com</div>
+                <div className="text-sm text-muted-foreground break-all sm:break-words [overflow-wrap:anywhere]">
+                  singh.abhayparaste@gmail.com
+                </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all shrink-0" />
             </a>
           </div>
 
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="relative flex h-2 w-2">
+          <div className="flex items-start gap-2 text-sm text-muted-foreground text-pretty break-words">
+            <span className="relative flex h-2 w-2 mt-1.5 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            Available now — typically reply in under 2 hours
+            <span>Available now — typically reply in under 2 hours</span>
           </div>
         </motion.div>
 
@@ -127,19 +130,21 @@ export function ContactSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="relative"
+          className="relative min-w-0 max-w-full"
         >
-          <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 via-cyan-500/10 to-purple-500/15 rounded-3xl blur-2xl opacity-60" />
-          <div className="relative glass-strong rounded-2xl p-6 lg:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)]">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles className="w-5 h-5 text-primary" />
-              <h3 className="text-xl font-display font-bold text-foreground">Send us a message</h3>
+          <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 via-cyan-500/10 to-purple-500/15 rounded-3xl blur-2xl opacity-60 pointer-events-none" />
+          <div className="relative glass-strong rounded-2xl p-4 sm:p-6 lg:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.5)] w-full min-w-0 max-w-full box-border">
+            <div className="flex items-center gap-2 mb-2 min-w-0">
+              <Sparkles className="w-5 h-5 text-primary shrink-0" />
+              <h3 className="text-lg sm:text-xl font-display font-bold text-foreground leading-tight break-words">
+                Send us a message
+              </h3>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">
+            <p className="text-sm text-muted-foreground mb-6 text-pretty break-words">
               Tell us about your project — we&apos;ll get back to you within 24 hours.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 min-w-0 max-w-full">
               {submitted && (
                 <motion.div
                   initial={{ opacity: 0, y: -8 }}
@@ -214,7 +219,7 @@ export function ContactSection() {
                   </>
                 )}
               </Button>
-              <p className="text-[11px] text-center text-muted-foreground">
+              <p className="text-[11px] sm:text-xs text-center text-muted-foreground leading-snug px-0.5 break-words hyphens-auto max-w-full">
                 By submitting, you agree to our terms. We&apos;ll never share your info.
               </p>
             </form>

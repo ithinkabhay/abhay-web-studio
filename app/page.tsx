@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-background overflow-hidden">
+    <main className="relative min-h-screen bg-background overflow-x-clip lg:overflow-hidden">
       <Navbar />
       <HeroSection />
       <TrustSection />

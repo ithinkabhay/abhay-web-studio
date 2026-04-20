@@ -191,7 +191,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${display.variable} font-sans antialiased relative overflow-x-hidden`}
+        className={`${inter.variable} ${display.variable} font-sans antialiased relative overflow-x-hidden pb-[calc(6.25rem+env(safe-area-inset-bottom,0px))] lg:pb-0`}
       >
         <ScrollProgress />
         {children}

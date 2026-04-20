@@ -203,7 +203,7 @@ export function MobileBottomNav() {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, type: "spring", stiffness: 220, damping: 26 }}
-        className="lg:hidden fixed bottom-3 left-3 right-3 z-50"
+        className="lg:hidden fixed left-2 right-2 sm:left-3 sm:right-3 z-50 bottom-[calc(0.75rem+env(safe-area-inset-bottom,0px))]"
       >
         <motion.div
           drag="y"
@@ -211,7 +211,7 @@ export function MobileBottomNav() {
           dragElastic={{ top: 0.5, bottom: 0.2 }}
           onDragEnd={handleDragEnd}
           style={{ y }}
-          className="relative glass-strong rounded-[26px] px-2 pt-2 pb-2 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.04)_inset] touch-none select-none"
+          className="relative glass-strong rounded-[26px] px-1.5 sm:px-2 pt-2 pb-2 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.04)_inset] touch-none select-none"
         >
           {/* Drag handle / view toggle */}
           <button
@@ -251,7 +251,7 @@ export function MobileBottomNav() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="grid grid-cols-5 gap-1"
+                  className="grid grid-cols-5 gap-0.5 sm:gap-1"
                 >
                   {primary.map((item) => {
                     const isActive = activeId === item.id
@@ -259,7 +259,7 @@ export function MobileBottomNav() {
                       <Link
                         key={item.id}
                         href={item.href}
-                        className="relative flex flex-col items-center justify-center gap-1 py-2.5 rounded-xl"
+                        className="relative flex flex-col items-center justify-center gap-0.5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl min-w-0"
                       >
                         {isActive && (
                           <motion.span
@@ -274,7 +274,7 @@ export function MobileBottomNav() {
                           }`}
                         />
                         <span
-                          className={`relative text-[10px] font-medium leading-none transition-colors ${
+                          className={`relative text-[9px] sm:text-[10px] font-medium leading-tight text-center max-w-[4.25rem] sm:max-w-none truncate transition-colors ${
                             isActive ? "text-primary" : "text-muted-foreground"
                           }`}
                         >
@@ -291,7 +291,7 @@ export function MobileBottomNav() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -14 }}
                   transition={{ duration: 0.22, ease: "easeOut" }}
-                  className="grid grid-cols-5 gap-1"
+                  className="grid grid-cols-5 gap-0.5 sm:gap-1"
                 >
                   {secondary.map((item) => (
                     <a
@@ -299,21 +299,21 @@ export function MobileBottomNav() {
                       href={item.href}
                       target={item.href.startsWith("http") ? "_blank" : undefined}
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center gap-1 py-2.5 rounded-xl hover:bg-secondary/60"
+                      className="flex flex-col items-center justify-center gap-0.5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl hover:bg-secondary/60 min-w-0"
                     >
-                      <span className={`w-7 h-7 rounded-lg ring-1 ${item.bg} flex items-center justify-center`}>
+                      <span className={`w-7 h-7 rounded-lg ring-1 ${item.bg} flex items-center justify-center shrink-0`}>
                         <item.icon className={`w-4 h-4 ${item.color}`} />
                       </span>
-                      <span className="text-[10px] font-medium text-foreground/80 leading-none">
+                      <span className="text-[9px] sm:text-[10px] font-medium text-foreground/80 leading-tight text-center max-w-[4.25rem] sm:max-w-none truncate">
                         {item.label}
                       </span>
                     </a>
                   ))}
                   <button
                     onClick={() => setView("primary")}
-                    className="flex flex-col items-center justify-center gap-1 py-2.5 rounded-xl hover:bg-secondary/60"
+                    className="flex flex-col items-center justify-center gap-0.5 py-2 sm:py-2.5 rounded-lg sm:rounded-xl hover:bg-secondary/60 min-w-0"
                   >
-                    <span className="w-7 h-7 rounded-lg bg-secondary/80 flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-secondary/80 flex items-center justify-center shrink-0">
                       <ChevronDown className="w-4 h-4 text-muted-foreground" />
                     </span>
                     <span className="text-[10px] font-medium text-muted-foreground leading-none">
